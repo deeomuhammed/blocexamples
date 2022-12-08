@@ -7,6 +7,8 @@ import 'package:blocexamples/counter/logic/counter/counter_bloc.dart';
 import 'package:blocexamples/counter/screen/counter.dart';
 import 'package:blocexamples/switch/bloc/Switchdart.dart';
 import 'package:blocexamples/switch/bloc/switch_bloc.dart';
+import 'package:blocexamples/textfeild/bloc/textfeild_bloc.dart';
+import 'package:blocexamples/textfeild/textchange.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -67,14 +69,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SwitchBloc(),
+      create: (context) => TextfeildBloc(),
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: Switc()),
+          home: Textchange()),
     );
   }
 }
