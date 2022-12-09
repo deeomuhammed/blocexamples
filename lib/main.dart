@@ -5,14 +5,18 @@ import 'package:blocexamples/checkbox/bloc/checkbox_bloc.dart';
 import 'package:blocexamples/checkbox/checkbox.dart';
 import 'package:blocexamples/counter/logic/counter/counter_bloc.dart';
 import 'package:blocexamples/counter/screen/counter.dart';
+import 'package:blocexamples/go_router/gohome.dart';
+import 'package:blocexamples/go_router/router.dart';
 import 'package:blocexamples/switch/bloc/Switchdart.dart';
 import 'package:blocexamples/switch/bloc/switch_bloc.dart';
 import 'package:blocexamples/textfeild/bloc/textfeild_bloc.dart';
 import 'package:blocexamples/textfeild/textchange.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+   setPathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -69,14 +73,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => TextfeildBloc(),
-      child: MaterialApp(
+      create: (context) => TextfeildBloc()..add(OnchnageEvent('hello')),
+      child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: Textchange()),
-    );
+      routerDelegate: router.routerDelegate,
+      routeInformationParser:router.routeInformationParser ,
+      routeInformationProvider: router.routeInformationProvider,
+     ) );
   }
 }

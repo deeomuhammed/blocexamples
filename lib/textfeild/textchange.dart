@@ -18,7 +18,8 @@ TextEditingController textEditingController=TextEditingController();
           child: TextField(
           controller: textEditingController,
           onChanged: (val){
-            context.read<TextfeildBloc>().add(OnchnageEvent(textEditingController.text));
+       
+            context.read<TextfeildBloc>().add(OnchnageEvent(val));
           },
             ),
         ),
@@ -26,7 +27,10 @@ TextEditingController textEditingController=TextEditingController();
       SizedBox(height: 20,),
       BlocBuilder<TextfeildBloc, TextfeildState>(
       builder: (context, state) {
-        return Text(state.stateText);
+        return Card(child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(state.stateText),
+        ));
       },
     )],),),);
   }

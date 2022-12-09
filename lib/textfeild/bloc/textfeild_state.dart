@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 class TextfeildState extends Equatable {
   final String stateText;
-    final String staText='';
+  
   const TextfeildState({
     required this.stateText,
     
@@ -23,3 +23,10 @@ class TextfeildState extends Equatable {
 }
 
 
+// class  TextfeildInitial extends TextfeildState {
+//   TextfeildInitial({required super.stateText});
+ 
+
+
+  
+//  }
